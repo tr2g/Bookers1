@@ -36,6 +36,7 @@ class BooksController < ApplicationController
   end
 
   def destroy
+    flash[:notice] = "Book was successfully deleted."
     book = Book.find(params[:id])
     book.destroy
     redirect_to '/books'
